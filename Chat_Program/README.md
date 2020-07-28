@@ -18,5 +18,5 @@ Port Number는 3500으로 고정하였고 select method를 사용하였다.
 
 
 ## 3. Result
+Please look at "result.mkv" video.
 
-/home/winelab/test-2020-07-28_21.05.47.mkv
