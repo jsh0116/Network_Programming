@@ -4,7 +4,7 @@ Networking Programming Term Project로 Multiple Chatting Server & Client Program
 Port Number는 3500으로 고정하였고 select method를 사용하였다.
 
 ### 1) Server Implementation
-* Client 접속 시 해당 Client에게 welcome message를 출ㄹ력하고 기존에 접속 중인 Client에게 접속 message를 전송
+* Client 접속 시 해당 Client에게 welcome message를 출력하고 기존에 접속 중인 Client에게 접속 message를 전송
 * Multiple Client login 처리 및 Client가 보낸 message를 다른 Client에게도 전송.
 * System message '@show' 는 해당 Client에게 현재 접속된 Client 수와 ID 명을 출력.
 * System message '@exit' 는 헤당 Client와 접속을 종료.
