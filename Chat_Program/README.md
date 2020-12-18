@@ -18,5 +18,5 @@ Port Number는 3500으로 고정하였고 select method를 사용하였다.
 
 
 ## 3. Result
-Please look at "result.mkv" video.
+![image](https://user-images.githubusercontent.com/62865808/102571166-44964f80-412c-11eb-941a-6d6ceb83f9b5.png)
 
