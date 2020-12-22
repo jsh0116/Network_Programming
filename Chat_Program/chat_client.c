@@ -32,7 +32,7 @@ char name[NAME]; // each func use this variable
 ///////////////////////////////////////////////////////////////////////
 void *send_(void *sock_fd)
 {
-    int sock = *(int *)sock_fd;
+	int sock = *(int *)sock_fd;
 	char named_msg[BUFSIZE+NAME];
 	char msg[BUFSIZE];
 	while(1)
@@ -43,26 +43,24 @@ void *send_(void *sock_fd)
 		read(STDIN_FILENO, msg, BUFSIZE); // input message
 		/* @exit 입력했을 때 */
 		if(!strcmp(msg, "@exit\n")) {
-            printf("채팅이 종료되었습니다.\n");
+            		printf("채팅이 종료되었습니다.\n");
 			close(sock);
 			exit(0);
-
 		}
 		/* @show 입력했을 때 */
-        else if(!strcmp(msg,"@show\n")) {
-            write(sock,msg,strlen(msg));
-        }
+        	else if(!strcmp(msg,"@show\n")) {
+            		write(sock,msg,strlen(msg));
+        	}
 
 		/*그 이외 입력했을 때 */
-        else {
-            sprintf(named_msg,"%s: %s", name, msg);
-		    write(sock, named_msg, strlen(named_msg)); // 형식 맞춰서 서버로 전송
-        }
+        	else {
+            		sprintf(named_msg,"%s: %s", name, msg);
+		    	write(sock, named_msg, strlen(named_msg)); // 형식 맞춰서 서버로 전송
+        	}
 	}
 	exit(0);
 }
 
- 
 ///////////////////////////////////////////////////////////////////////
 // Function : void *recv_(void *sock_fd)                             //
 // ================================================================= //
@@ -72,7 +70,7 @@ void *send_(void *sock_fd)
 ///////////////////////////////////////////////////////////////////////
 void *recv_(void *sock_fd) 
 {
-    int sock = *(int *)sock_fd;
+	int sock = *(int *)sock_fd;
 	char msg[BUFSIZE];
 	while(1)
 	{
@@ -92,7 +90,7 @@ void *recv_(void *sock_fd)
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 int main(int argc, char* argv[])
 {
-    int sockfd;
+	int sockfd;
 	char buf[BUFSIZE];
 	pthread_t send_thread, recv_thread;
 	struct sockaddr_in serv_addr;
