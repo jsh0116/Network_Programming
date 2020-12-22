@@ -24,7 +24,7 @@
 
 int main () 
 {
-    int listenfd, connfd;
+	int listenfd, connfd;
 	int clilen, cli_num = 0;
 	int maxfd;
 	int fdnum;
@@ -43,14 +43,14 @@ int main ()
 	/* open socket */
 	if((listenfd = socket(AF_INET, SOCK_STREAM, IPPROTO_TCP)) < 0) {
 		perror("socket");
-		
+		exit(0);
 	}
 	/* prevent bind error after server terminated */
 	int option = 1;
-    if(setsockopt(listenfd, SOL_SOCKET, SO_REUSEADDR, &option, sizeof(option)) < 0) { 
-        perror("setsockopt");
-        exit(0);
-    }
+    	if(setsockopt(listenfd, SOL_SOCKET, SO_REUSEADDR, &option, sizeof(option)) < 0) { 
+        	perror("setsockopt");
+        	exit(0);
+    	}
 
 	/*initialize server socket information struct to zero and add info*/
 	memset((void*)&server_addr, 0x00, sizeof(server_addr));
